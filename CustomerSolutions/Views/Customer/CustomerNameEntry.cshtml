@@ -1,0 +1,32 @@
+﻿@model CustomerSolutions.Models.Customer.Customer
+
+
+<h4>Enter Customer Name</h4>
+
+<div class="row">
+    <div class="col-md-4">
+        @using(Html.BeginForm("CheckName", "Customer", FormMethod.Post)) {
+        <div class="form-group">
+            @Html.DisplayNameFor(model => model.FirstName): @Html.TextBox("FirstName")
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(model => model.LastName): @Html.TextBox("LastName")
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+        }
+    </div>
+</div>
+@if (ViewBag.Message != null)
+    {
+<script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+</script>
+    }
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
